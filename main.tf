@@ -10,7 +10,7 @@ module "vpc" {
 
 module "ec2" {
   source           = "./modules/ec2"
-  ami_id           = "ami-0866a3c8686eaeeba" 
+  #ami_id           = "ami-0866a3c8686eaeeba" 
   instance_type    = "t2.micro"
   subnet_ids       = module.vpc.public_subnet_ids
   security_group_id = aws_security_group.main.id

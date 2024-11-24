@@ -1,6 +1,6 @@
 resource "aws_instance" "web" {
   count         = length(var.ec2_names)
-  ami           = var.ami_id
+  ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   subnet_id     = element(var.subnet_ids, count.index)
   security_groups = [var.security_group_id]
