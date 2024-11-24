@@ -18,3 +18,8 @@ variable "security_group_id" {
   type        = string
 }
 
+variable "ec2_names" {
+    description = "EC2 names"
+    type = list(string)
+    default = ["Web_server1", "Web_server2"]
+}

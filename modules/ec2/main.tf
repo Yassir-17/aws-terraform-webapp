@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  count         = 2
+  count         = length(var.ec2_names)
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = element(var.subnet_ids, count.index)
@@ -12,7 +12,7 @@ resource "aws_instance" "web" {
   })
 
   tags = {
-    Name = "web-${count.index}"
+    Name = var.ec2_names[count.index]
   }
 }
 
