@@ -15,13 +15,14 @@ resource "aws_internet_gateway" "main" {
 }
 
 resource "aws_subnet" "public" {
-  count = 2
+  count = length(var.subnet_cidr)
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = element(["10.0.1.0/24", "10.0.2.0/24"], count.index)
+  cidr_block              = var.subnet_cidr[count.index]
   map_public_ip_on_launch = true
-  availability_zone       = element(var.availability_zones, count.index)
+  #availability_zone       = element(var.availability_zones, count.index)
+  availability_zone = data.aws_availability_zones.available.names[count.index]
   tags = {
-    Name = "${var.vpc_name}-public-${count.index}"
+    Name = "${var.vpc_name}-public-subnet${count.index}"
   }
 }
 

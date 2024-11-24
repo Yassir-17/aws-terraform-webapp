@@ -5,7 +5,8 @@ provider "aws" {
 module "vpc" {
   source             = "./modules/vpc"
   vpc_name           = "my-vpc"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  #availability_zones = ["us-east-1a", "us-east-1b"]
+  subnet_cidr = var.subnet_cidr
 }
 
 module "ec2" {
