@@ -34,5 +34,5 @@ jobs:
       - name: Terraform Apply
         id: apply
         run: terraform destroy --auto-approve
-        working-directory: ./Terraform-aws-vpc
+        working-directory: ./Terraform-aws
         # Test deployment
