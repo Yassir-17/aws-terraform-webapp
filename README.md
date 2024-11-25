@@ -48,6 +48,7 @@ aws-terraform-webapp/
 │   └── modules/                # Modularized Terraform scripts
 ├── .gitignore                  # Files to ignore in Git
 ├── README.md                   # Documentation
+```
 ---
 ## Getting Started
 
