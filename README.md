@@ -65,7 +65,7 @@ aws-terraform-webapp/
 ```bash
 git clone https://github.com/Yassir-17/aws-terraform-webapp.git
 cd aws-terraform-webapp
-
+```
 
 #### Run Terraform Locally (Optional)
 
