@@ -74,7 +74,7 @@ cd Terraform-aws
 terraform init
 terraform plan
 terraform apply
-
+```
 
 #### Trigger GitHub Actions Workflow
 
