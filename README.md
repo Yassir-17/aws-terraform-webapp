@@ -20,8 +20,8 @@ This project automates the deployment of a web application on AWS using **Terraf
 ## Architecture
 
 ### Infrastructure Components
-- **VPC:** Custom Virtual Private Cloud with 2 public in different AZs.
-- **Compute:** Two EC2 instances.
+- **VPC:** Custom Virtual Private Cloud with two public subnets in different Availability Zones (AZs).
+- **Compute:** Two EC2 instances deployed in the public subnets.
 - **Load Balancer:** Application Load Balancer for traffic distribution.
 
 ### CI/CD Pipeline
@@ -43,12 +43,12 @@ aws-terraform-webapp/
 │   ├── provider.tf             # Terraform Providers
 │   ├── main.tf                 # Main Terraform configuration
 │   ├── variables.tf            # Terraform variables
-│   ├── terraform.tfvars        # Terraform variables
+│   ├── terraform.tfvars        # Values for Terraform variables
 │   ├── outputs.tf              # Terraform outputs
 │   └── modules/                # Modularized Terraform scripts
 ├── .gitignore                  # Files to ignore in Git
 ├── README.md                   # Documentation
-
+---
 ## Getting Started
 
 ### Prerequisites
@@ -66,15 +66,16 @@ git clone https://github.com/Yassir-17/aws-terraform-webapp.git
 cd aws-terraform-webapp
 ---
 
-### Run Terraform Locally (Optional)
+#### Run Terraform Locally (Optional)
 
 ```bash
 cd Terraform-aws
 terraform init
 terraform plan
 terraform apply
+---
 
-### Trigger GitHub Actions Workflow
+#### Trigger GitHub Actions Workflow
 
 1. Push changes to the `main` branch.
 2. View the deployment progress under the **Actions** tab on GitHub.
